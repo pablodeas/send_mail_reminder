@@ -44,11 +44,12 @@ def cli():
 def list():
     try:
         cur, conn = connect_db(None, None)
-        cur.execute("select Id, Message, TO_CHAR(Creation_Date, 'dd/mm') from public.reminder order by Id asc")
+        cur.execute("select Id, Message, TO_CHAR(Creation_Date, 'dd/mm') from public.reminder order by Message asc")
         rows = cur.fetchall()
 
         for i in rows:
-            print(f"> Id: {i[0]} | Message: {i[1]} | Date: {i[2]}")
+            #print(f"> Id: {i[0]} | Message: {i[1]} | Date: {i[2]}")
+            print(f"> Id: {i[0]} | Message: {i[1]}")
                 
         conn.commit()
 
@@ -121,10 +122,11 @@ def send():
             return
         
         message = MIMEMultipart()
-        message['Subject'] = "> Lembrete."
+        message['Subject'] = "### LEMBRETES ###"
         message['From'] = mail
         message['To'] = mail
-        body = "\n".join([f"> Lembrar de: {r[0]} - Data: {r[1]}" for r in reminders])
+        #body = "\n".join([f"> {r[0]} - Data: {r[1]}" for r in reminders])
+        body = "\n".join([f"> {r[0]}" for r in reminders])
         message.attach(MIMEText(body, 'plain'))
 
         s = smtplib.SMTP('smtp.gmail.com', 587)
