@@ -125,8 +125,8 @@ def send():
         message['Subject'] = "### LEMBRETES ###"
         message['From'] = mail
         message['To'] = mail
-        #body = "\n".join([f"> {r[0]} - Data: {r[1]}" for r in reminders])
-        body = "\n".join([f"> {r[0]}" for r in reminders])
+        body = "\n".join([f"> {r[0]} - {r[1]}" for r in reminders])
+        #body = "\n".join([f"> {r[0]}" for r in reminders])
         message.attach(MIMEText(body, 'plain'))
 
         s = smtplib.SMTP('smtp.gmail.com', 587)
