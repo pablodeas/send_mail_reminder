@@ -107,7 +107,7 @@ def send():
     def list_reminders():
         try:
             cur, conn = connect_db(None, None)
-            cur.execute("SELECT Message, TO_CHAR(Creation_Date, 'dd/mm/YYYY') FROM public.reminder ORDER BY Id ASC")
+            cur.execute("SELECT Message, TO_CHAR(Creation_Date, 'dd/mm/YYYY') FROM public.reminder ORDER BY Message ASC")
             reminders = cur.fetchall()
             conn.commit()
             return reminders
