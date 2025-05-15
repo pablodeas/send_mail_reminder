@@ -1,3 +1,5 @@
+#! /usr/bin/env python3
+
 #   Author:     Pablo Andrade
 #   Created:    29/11/2024
 #   Version:    0.0.2
@@ -27,7 +29,7 @@ db_host = os.getenv("HOST")
 db_port = os.getenv("PORT")
 
 if not mail or not passw:
-    print(f"> Variables not found.")
+    print(f"> Variable MAIL or PASSW not found.")
     exit(1)
 
 def connect_db(cur, conn):

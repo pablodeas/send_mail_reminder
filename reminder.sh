@@ -4,4 +4,4 @@
 #   Created:    29/11/2024
 #   Version:    0.0.1
 
-python3 /home/pablodeas/Projects/pessoal/send_mail/main.py "$@"
+"$HOME"/Projects/python/send_mail_reminder/.venv/bin/python3 "$HOME"/Projects/python/send_mail_reminder/main.py "$@"
