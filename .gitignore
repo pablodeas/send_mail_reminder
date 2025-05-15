@@ -1,2 +1,6 @@
 .env
 send.log
+.venv
+.venv/
+.venv/*
+__pycache__/

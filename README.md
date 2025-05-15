@@ -2,7 +2,7 @@
 
 ## Visão Geral
 
-Remedy é um sistema Python projetado para enviar e-mails automáticos com lembretes programados. O sistema utiliza uma base de dados PostgreSQL para armazenar os lembretes e um servidor SMTP para enviar os e-mails.
+*reminder* é um sistema Python projetado para enviar e-mails automáticos com lembretes programados. O sistema utiliza uma base de dados PostgreSQL para armazenar os lembretes e um servidor SMTP para enviar os e-mails.
 
 ## Funcionalidades Principais
 
